@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "cd ../ && neu run -- --window-enable-inspector --frontend-lib-dev",
+    "serve": "webpack-dev-server",
     "build": "webpack --mode=production"
   },
   "dependencies": {
