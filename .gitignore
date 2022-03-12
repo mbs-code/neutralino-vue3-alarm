@@ -11,3 +11,8 @@ neutralino.js
 # Neutralinojs related files
 .storage
 *.log
+
+# vue files
+package-lock.json
+node_modules
+dist
