@@ -1,14 +1,16 @@
 const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   mode: 'development',
   entry: {
-    index: path.join(__dirname, 'src', 'main.ts'),
+    bundle: path.join(__dirname, 'src', 'main.ts'),
   },
   output: {
-    filename: 'assets/js/[name]-[chunkhash].js',
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js',
+    clean: true,
   },
   module: {
     rules: [
@@ -34,10 +36,14 @@ module.exports = {
     ],
   },
   plugins: [
-    new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),
-      inject: 'head',
-    }),
     new VueLoaderPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.join(__dirname, 'public'),
+          to: path.join(__dirname, 'dist'),
+        },
+      ],
+    }),
   ],
 }
