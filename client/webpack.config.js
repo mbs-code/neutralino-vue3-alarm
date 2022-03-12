@@ -5,13 +5,21 @@ const { VueLoaderPlugin } = require('vue-loader')
 module.exports = {
   mode: 'development',
   entry: {
-    index: path.join(__dirname, 'src', 'main.js'),
+    index: path.join(__dirname, 'src', 'main.ts'),
   },
   output: {
     filename: 'assets/js/[name]-[chunkhash].js',
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        },
+        exclude: /node_modules/,
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
