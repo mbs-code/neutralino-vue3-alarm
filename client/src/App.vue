@@ -1,7 +1,13 @@
 <template>
-  <div>{{ message }}</div>
+  <div class="red">{{ message }}</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const message = 'Hello Vue!'
 </script>
+
+<style scoped>
+.red {
+  color: red;
+}
+</style>
