@@ -7,6 +7,15 @@
 
 Combined by `mbs-code`.  
 
+## init
+
+Install CLI
+
+```bash
+$ npm install -g @neutralinojs/neu
+$ neu update
+```
+
 
 ## dev
 
