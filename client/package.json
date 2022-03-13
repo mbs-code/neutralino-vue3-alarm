@@ -11,6 +11,8 @@
     "build": "webpack --mode=production"
   },
   "dependencies": {
+    "naive-ui": "^2.26.4",
+    "vfonts": "^0.0.3",
     "vue": "^3.2.31"
   },
   "devDependencies": {
