@@ -60,10 +60,6 @@ module.exports = {
           from: path.join(__dirname, 'public'),
           to: path.join(__dirname, 'dist'),
         },
-        {
-          from: path.join(__dirname, 'src', 'assets'),
-          to: path.join(__dirname, 'dist', 'assets'),
-        },
       ],
     }),
   ],
