@@ -1,8 +1,10 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main.ts",
   "license": "MIT",
+  "author": "mbs-code",
+  "private": true,
   "scripts": {
     "dev": "webpack-dev-server",
     "neu": "cd ../ && neu run -- --window-enable-inspector --frontend-lib-dev",
