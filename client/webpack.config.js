@@ -52,6 +52,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.vue', '.ts', '.js'],
+  },
   plugins: [
     new VueLoaderPlugin(),
     new CopyPlugin({

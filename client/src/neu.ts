@@ -1,4 +1,4 @@
-function setTray() {
+const setTray = () => {
   if (window.NL_MODE != 'window') {
     console.log('INFO: Tray menu is only available in the window mode.')
     return
@@ -14,7 +14,7 @@ function setTray() {
   window.Neutralino.os.setTray(tray)
 }
 
-function onTrayMenuItemClicked(event) {
+const onTrayMenuItemClicked = (event: any) => {
   switch (event.detail.id) {
     case 'VERSION':
       window.Neutralino.os.showMessageBox('Version information',
@@ -26,16 +26,20 @@ function onTrayMenuItemClicked(event) {
   }
 }
 
-function onWindowClose() {
+const onWindowClose = () => {
   window.Neutralino.app.exit()
 }
 
-window.Neutralino.init()
-console.log('neu init')
+///
 
-window.Neutralino.events.on('trayMenuItemClicked', onTrayMenuItemClicked)
-window.Neutralino.events.on('windowClose', onWindowClose)
+export const initNeutralino = () => {
+  window.Neutralino.init()
 
-if (window.NL_OS != 'Darwin') { // TODO: Fix https://github.com/neutralinojs/neutralinojs/issues/615
-  setTray()
+  window.Neutralino.events.on('trayMenuItemClicked', onTrayMenuItemClicked)
+  window.Neutralino.events.on('windowClose', onWindowClose)
+  window.Neutralino.events.on('ready', () => console.log('[neu] ready!'))
+
+  if (window.NL_OS != 'Darwin') { // TODO: Fix https://github.com/neutralinojs/neutralinojs/issues/615
+    setTray()
+  }
 }
