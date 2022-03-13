@@ -1,0 +1,1 @@
+<template>あばうと</template>
