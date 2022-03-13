@@ -4,6 +4,8 @@
 # Neutralinojs binaries and builds
 /bin
 /dist
+/temp
+/.tmp
 
 # Neutralinojs client (minified)
 neutralino.js
@@ -16,5 +18,3 @@ neutralino.js
 package-lock.json
 node_modules
 dist
-.tmp
-/temp
