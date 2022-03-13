@@ -1,6 +1,16 @@
 <template>
   <h1>{{ msg }}</h1>
 
+  <p style="white-space: pre;">{{ info }}</p>
+
+  <div>
+    <button @click="openDocs">Neu Docs</button>
+    |
+    <button @click="openTutorial">Tutorial</button>
+  </div>
+
+  <hr />
+
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
@@ -14,7 +24,7 @@
   </p>
 
   <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">Vite Docs</a>
+    <a href="https://webpack.js.org/concepts/" target="_blank">Webpack Docs</a>
     |
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
@@ -31,7 +41,14 @@ import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
+const info = `${window.NL_APPID} is running on port ${window.NL_PORT}  inside ${window.NL_OS}\n`
+  + '\n'
+  + `neu server: v${window.NL_VERSION} . neu client: v${window.NL_CVERSION}`
+
 const count = ref(0)
+
+const openDocs = () => window.Neutralino.os.open('https://neutralino.js.org/docs')
+const openTutorial = () => window.Neutralino.os.open('https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj')
 </script>
 
 <style scoped>

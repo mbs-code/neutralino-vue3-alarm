@@ -15,7 +15,7 @@
     "window": {
       "title": "neutralino-vue3-alarm",
       "width": 800,
-      "height": 500,
+      "height": 600,
       "minWidth": 400,
       "minHeight": 200,
       "icon": "/client/dist/favicon.ico"
@@ -30,7 +30,7 @@
       "patchFile": "/client/dist/index.html",
       "devUrl": "http://localhost:8080"
     },
-    "binaryVersion": "4.2.0",
-    "clientVersion": "3.1.0"
+    "binaryVersion": "4.4.0",
+    "clientVersion": "3.3.0"
   }
 }

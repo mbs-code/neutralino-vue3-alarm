@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-// vue の展開
-createApp(App).mount('#app')
-
-// neu の展開
+// init neu
 require('./neu.ts')
+
+// init vue
+createApp(App).mount('#app')

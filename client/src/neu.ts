@@ -9,21 +9,13 @@ function showInfo() {
   }
 }
 
-function openDocs() {
-  window.Neutralino.os.open('https://neutralino.js.org/docs')
-}
-
-function openTutorial() {
-  window.Neutralino.os.open('https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj')
-}
-
 function setTray() {
   if (window.NL_MODE != 'window') {
     console.log('INFO: Tray menu is only available in the window mode.')
     return
   }
   let tray = {
-    icon: '/client/dist/logo.png',
+    icon: '/client/dist/trayIcon.png',
     menuItems: [
       { id: 'VERSION', text: 'Get version' },
       { id: 'SEP', text: '-' },

@@ -1,12 +1,13 @@
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <img alt="Neutralino logo" src="./assets/neutralino.png" width="140" />
+  <img alt="Vue logo" src="./assets/vue.png" width="140" />
+  <img alt="Ts logo" src="./assets/typescript.png" width="140" />
+  <img alt="Ts logo" src="./assets/webpack.png" width="140" />
+  <HelloWorld msg="Neutralino + Vue 3 + TypeScript + Webpack" />
 </template>
 
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
@@ -17,6 +18,5 @@ import HelloWorld from './components/HelloWorld.vue'
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
