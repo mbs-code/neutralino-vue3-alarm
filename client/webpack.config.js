@@ -39,17 +39,6 @@ module.exports = {
           'css-loader',
         ],
       },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/[name].[ext]'
-            }
-          },
-        ],
-      },
     ],
   },
   resolve: {
@@ -62,6 +51,10 @@ module.exports = {
         {
           from: path.join(__dirname, 'public'),
           to: path.join(__dirname, 'dist'),
+        },
+        {
+          from: path.join(__dirname, 'src', 'assets'),
+          to: path.join(__dirname, 'dist', 'assets'),
         },
       ],
     }),
