@@ -2,29 +2,35 @@
   "applicationId": "js.neutralino.zero",
   "version": "1.0.0",
   "defaultMode": "window",
-  "documentRoot": "/www/",
+  "documentRoot": "/client/dist/",
   "url": "/",
   "enableServer": true,
   "enableNativeAPI": true,
   "nativeAllowList": [
-    "app.*"
+    "app.*",
+    "os.*",
+    "extensions.*"
   ],
   "modes": {
     "window": {
       "title": "neutralino-vue3-alarm",
       "width": 800,
-      "height": 500,
+      "height": 600,
       "minWidth": 400,
       "minHeight": 200,
-      "icon": "/www/icon.png"
+      "icon": "/client/dist/favicon.ico"
     }
   },
   "cli": {
     "binaryName": "neutralino-vue3-alarm",
-    "resourcesPath": "/www/",
+    "resourcesPath": "/client/dist/",
     "extensionsPath": "/extensions/",
-    "clientLibrary": "/www/neutralino.js",
-    "binaryVersion": "4.2.0",
-    "clientVersion": "3.1.0"
+    "clientLibrary": "/client/public/neutralino.js",
+    "frontendLibrary": {
+      "patchFile": "/client/dist/index.html",
+      "devUrl": "http://localhost:8080"
+    },
+    "binaryVersion": "4.4.0",
+    "clientVersion": "3.3.0"
   }
 }
