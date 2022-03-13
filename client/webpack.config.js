@@ -4,6 +4,12 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   mode: 'development',
+  devServer: {
+    hot: true,
+    devMiddleware: {
+      writeToDisk: true,
+    },
+  },
   entry: {
     bundle: path.join(__dirname, 'src', 'main.ts'),
   },
