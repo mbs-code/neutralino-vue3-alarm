@@ -32,10 +32,10 @@
 </template>
 
 <script setup lang="ts">
-import AboutInterface from '../../interfaces/AboutInterface'
+import AboutLinkCardProps from '../../interfaces/AboutLinkCardProps'
 
 defineProps<{
-  about: AboutInterface,
+  about: AboutLinkCardProps,
 }>()
 
 const openUrl = (url: string) => window.Neutralino.os.open(url)

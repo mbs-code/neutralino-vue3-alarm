@@ -1,7 +1,7 @@
 <template>
   <n-grid :x-gap="8" :y-gap="8" cols="1 s:2" responsive="screen">
     <n-grid-item v-for="(about, _) of abouts" :key="_">
-      <AboutLinkCard :about="about"></AboutLinkCard>
+      <AboutLinkCard :about="about" />
     </n-grid-item>
   </n-grid>
 </template>
@@ -12,9 +12,9 @@ import {
   BookOutline as BookOutlineIcon,
   LogoGithub as LogoGithubIcon,
 } from '@vicons/ionicons5'
-import AboutInterface from '../../interfaces/AboutInterface'
+import AboutLinkCardProps from '../../interfaces/AboutLinkCardProps'
 
-const abouts: AboutInterface[] = [
+const abouts: AboutLinkCardProps[] = [
   {
     title: 'Neutralinojs',
     thumbnail: '../assets/neutralino.png',
