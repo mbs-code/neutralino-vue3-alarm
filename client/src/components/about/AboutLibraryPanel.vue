@@ -43,6 +43,15 @@ const abouts: AboutLinkCardProps[] = [
     ],
   },
   {
+    title: 'date-fns',
+    thumbnail: '../assets/datefns.png',
+    description: 'Javascript date utility library.',
+    links: [
+      { url: 'https://date-fns.org/', icon: BookOutlineIcon },
+      { url: 'https://github.com/date-fns/date-fns', icon: LogoGithubIcon },
+    ],
+  },
+  {
     title: 'xicons',
     thumbnail: '../assets/xicons.png',
     description: 'Vue3 SVG icon components.',
