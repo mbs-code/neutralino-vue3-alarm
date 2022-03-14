@@ -11,8 +11,7 @@
       <template #header-extra>
         <n-space>
           <n-button
-            v-for="(link, _) of about.links"
-            :key="_"
+            v-for="link of about.links"
             circle
             size="small"
             tag="a"

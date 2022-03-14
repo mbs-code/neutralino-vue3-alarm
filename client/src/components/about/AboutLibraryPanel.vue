@@ -8,8 +8,10 @@
 
 <script setup lang="ts">
 import AboutLinkCard from './AboutLinkCard.vue'
-import { BookOutline as BookOutlineIcon } from '@vicons/ionicons5'
-import { LogoGithub as LogoGithubIcon } from '@vicons/ionicons5'
+import {
+  BookOutline as BookOutlineIcon,
+  LogoGithub as LogoGithubIcon,
+} from '@vicons/ionicons5'
 import AboutInterface from '../../interfaces/AboutInterface'
 
 const abouts: AboutInterface[] = [
