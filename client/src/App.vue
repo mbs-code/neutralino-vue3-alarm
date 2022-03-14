@@ -1,16 +1,20 @@
 <template>
   <n-layout position="absolute">
-    <n-layout-header position="absolute" bordered style="height: 24px;">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
+    <n-layout-header position="absolute" bordered style="height: 44px;">
+      <MenuBar style="padding: 4px 8px;" />
     </n-layout-header>
-    <n-layout has-sider position="absolute" style="top: 24px;">
+
+    <n-layout has-sider position="absolute" style="top: 44px;">
       <n-layout content-style="padding: 24px;">
         <router-view />
       </n-layout>
     </n-layout>
   </n-layout>
 </template>
+
+<script setup lang="ts">
+import MenuBar from './components/MenuBar.vue'
+</script>
 
 <style>
 /* custom scrollbar */
