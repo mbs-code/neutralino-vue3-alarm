@@ -5,6 +5,7 @@
   "documentRoot": "/client/dist/",
   "url": "/",
   "enableServer": true,
+  "enableExtensions": true,
   "enableNativeAPI": true,
   "nativeAllowList": [
     "app.*",
@@ -18,7 +19,8 @@
       "height": 600,
       "minWidth": 400,
       "minHeight": 200,
-      "icon": "/client/dist/favicon.ico"
+      "icon": "/client/dist/favicon.ico",
+      "enableExtensions": true
     }
   },
   "cli": {
@@ -32,5 +34,11 @@
     },
     "binaryVersion": "4.4.0",
     "clientVersion": "3.3.0"
-  }
+  },
+  "extensions": [
+    {
+        "id": "js.neutralino.server",
+        "command": "cd ${NL_PATH}/extensions/server && node bin/main.js"
+    }
+  ]
 }

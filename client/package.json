@@ -7,9 +7,9 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server",
-    "neu": "cd ../ && neu run -- --window-enable-inspector --frontend-lib-dev",
+    "neu": "yarn --cwd ../server build && cd ../ &&  neu run -- --window-enable-inspector --frontend-lib-dev",
     "build": "webpack --mode=production",
-    "compile": "yarn build && cd ../ && neu build"
+    "generate": "yarn build && cd ../ && neu build"
   },
   "dependencies": {
     "@vicons/ionicons5": "^0.12.0",

@@ -18,3 +18,7 @@ neutralino.js
 package-lock.json
 node_modules
 dist
+
+# extension file
+/extensions/server/*
+!/extensions/server/.gitkeep
