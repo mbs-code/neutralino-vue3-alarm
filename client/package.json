@@ -7,9 +7,13 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server",
-    "neu": "yarn --cwd ../server build && cd ../ &&  neu run -- --window-enable-inspector --frontend-lib-dev",
     "build": "webpack --mode=production",
-    "generate": "yarn build && cd ../ && neu build"
+    "neu:run": "cd ../ && neu run -- --window-enable-inspector --frontend-lib-dev",
+    "neu:build": "cd ../ && neu build",
+    "neu": "run-s server:dev neu:run",
+    "server:dev": "yarn --cwd ../server dev",
+    "server:generate": "yarn --cwd ../server generate",
+    "generate": "run-s build server:generate neu:build"
   },
   "dependencies": {
     "@vicons/ionicons5": "^0.12.0",
@@ -27,6 +31,7 @@
     "@vue/compiler-sfc": "^3.2.31",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
+    "npm-run-all": "^4.1.5",
     "ts-loader": "^9.2.8",
     "typescript": "^4.6.2",
     "vue-loader": "^17.0.0",

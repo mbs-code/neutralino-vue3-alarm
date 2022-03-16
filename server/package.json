@@ -4,8 +4,12 @@
   "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack -w"
+    "dev": "webpack",
+    "build": "webpack --mode=production",
+    "watch": "webpack -w",
+    "generate": "run-s build module:rm module:copy",
+    "module:rm": "rimraf ../extensions/server/node_modules ../extensions/server/server.log",
+    "module:copy": "copy-node-modules . ../extensions/server"
   },
   "dependencies": {
     "command-line-args": "^5.2.1",
@@ -22,6 +26,8 @@
     "@types/node-notifier": "^8.0.2",
     "@types/object-path": "^0.11.1",
     "@types/websocket": "^1.0.5",
+    "copy-node-modules": "^1.1.1",
+    "rimraf": "^3.0.2",
     "ts-loader": "^9.2.8",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2"
