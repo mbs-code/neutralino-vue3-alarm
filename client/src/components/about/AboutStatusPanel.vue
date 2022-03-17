@@ -11,6 +11,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { useNeu } from '../../composables/useNeu'
 
 const statuses = ref([
   ['app id', window.NL_APPID],
@@ -25,7 +26,7 @@ const statuses = ref([
 ])
 
 onMounted(async () => {
-  const { connected, loaded } = await window.Neutralino.extensions.getStats()
+  const { connected, loaded } = await useNeu().getExtensionStatus()
   statuses.value.push(['loaded ext', loaded.join(', ')])
   statuses.value.push(['connected ext', connected.join(', ')])
 })

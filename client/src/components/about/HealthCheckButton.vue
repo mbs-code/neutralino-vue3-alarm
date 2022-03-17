@@ -10,10 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import { Server as ServerIcon } from '@vicons/ionicons5'
-import ServerRepository from '../../repositories/serverRepository'
+import { useNeu } from '../../composables/useNeu'
 
-const onHealthCheck = () => {
-  ServerRepository.healthCheck()
+const onHealthCheck = async () => {
+  await useNeu().healthCheck()
 }
 </script>
