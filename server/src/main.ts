@@ -1,7 +1,7 @@
 import args from 'command-line-args'
 import { get } from 'object-path'
 import { ICloseEvent, IMessageEvent, w3cwebsocket as WebSocket } from 'websocket'
-import notifier from 'node-notifier'
+import handleNotify from './events/handleNotify'
 
 import Logger from './logger'
 
@@ -36,11 +36,12 @@ client.onclose = (event: ICloseEvent) => {
   Logger.info(event)
 }
 
-client.onmessage = (message: IMessageEvent) => {
+client.onmessage = async (message: IMessageEvent) => {
   if (!message || typeof message.data !== 'string') {
     return
   }
 
+  let res = null
   try {
     Logger.info('received message. ' + message.data)
 
@@ -48,10 +49,9 @@ client.onmessage = (message: IMessageEvent) => {
     const event = get(json, 'event')
     const data = get(json, 'data')
 
-    let res = null
     switch (event) {
       case 'notify':
-        res = handleNotify(data)
+        res = await handleNotify(data)
         break
       default:
         return
@@ -59,20 +59,8 @@ client.onmessage = (message: IMessageEvent) => {
   } catch (error) {
     Logger.error('message error!')
     Logger.error(error)
-    // TODO: 返す
-  }
-}
-
-const handleNotify = (data: object) => {
-  const message = get(data, 'message')
-  if (!message) throw new Error('Data not found: key=message')
-
-  notifier.notify(message, (error, resoinse, metadata) => {
-    Logger.info(error)
-    Logger.info(resoinse)
-    Logger.info(metadata)
-  })
-  return {
-    message: 'success',
+    res = String(error)
+  } finally {
+    return res
   }
 }

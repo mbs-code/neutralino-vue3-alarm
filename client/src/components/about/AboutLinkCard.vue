@@ -3,7 +3,7 @@
   <n-card>
     <n-thing>
       <template #avatar>
-        <n-avatar :src="about.thumbnail" :size="64" color="white"></n-avatar>
+        <n-avatar :src="about.thumbnail" :size="64" color="white" object-fit="contain"></n-avatar>
       </template>
 
       <template #header>{{ about.title }}</template>

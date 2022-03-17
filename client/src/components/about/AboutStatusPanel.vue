@@ -2,7 +2,7 @@
   <n-table size="small" :single-line="false">
     <tbody>
       <tr v-for="[key, value] of statuses">
-        <td style="min-width: 100px;">{{ key }}</td>
+        <td style="min-width: 120px;">{{ key }}</td>
         <td style="word-break: break-all;">{{ value }}</td>
       </tr>
     </tbody>
@@ -10,7 +10,9 @@
 </template>
 
 <script setup lang="ts">
-const statuses = [
+import { onMounted, ref } from 'vue'
+
+const statuses = ref([
   ['app id', window.NL_APPID],
   ['app ver', window.NL_APPVERSION],
   ['neu server', window.NL_VERSION],
@@ -20,5 +22,11 @@ const statuses = [
   ['pid', window.NL_PID],
   ['path', window.NL_CWD],
   ['resource', window.NL_RESMODE],
-]
+])
+
+onMounted(async () => {
+  const { connected, loaded } = await window.Neutralino.extensions.getStats()
+  statuses.value.push(['loaded ext', loaded.join(', ')])
+  statuses.value.push(['connected ext', connected.join(', ')])
+})
 </script>
